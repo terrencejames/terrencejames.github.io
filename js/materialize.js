@@ -7591,7 +7591,7 @@ $jscomp.polyfill = function (e, r, p, m) {
             $card.css('overflow', $card.data('initialOverflow'));
           }
         });
-      } else if ($(e.target).is($('.card .activator')) || $(e.target).is($('.card .activator i'))) {
+      } else if ($(e.target.firstElementChild).is($('.card .activator')) || $(e.target.firstElementChild).is($('.card .activator i'))) {
         $card.css('overflow', 'hidden');
         $cardReveal.css({ display: 'block' });
         anim({
