@@ -5254,6 +5254,11 @@ small {
   cursor: pointer;
 }
 
+.btn.round{
+  border-radius: 50px;
+  margin-left: 50px;
+}
+
 .btn:hover, .btn-large:hover {
   background-color: #2bbbad;
 }
