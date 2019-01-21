@@ -4464,7 +4464,8 @@ html {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color:  rgba(255,255,255, 0.83);
+  
+  /*color:  rgba(255,255,255, 0.83);*/
 }
 
 @media only screen and (min-width: 0) {
@@ -5952,6 +5953,7 @@ button.btn-floating {
 
 .materialboxed {
   display: block;
+
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
   position: relative;
