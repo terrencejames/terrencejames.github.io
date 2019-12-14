@@ -829,6 +829,27 @@ i-circled {
     max-width: 100%;
     display: inline-block;
 }
+
+.img-project{
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  max-height: 250px;
+}
+
+.image-cropper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.profile-pic {
+  display: inline;
+  margin: 0 auto;
+  margin-left: -6%;
+  /* height: 100%; */
+  width: auto;
+  max-width:112%;
+}
 .social-icons {
     display: -webkit-box;
     display: -webkit-flex;
@@ -846,6 +867,8 @@ i-circled {
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .4);
     margin-bottom: 15px;
 }
+
+
 /* .fa.fa-github.dark{
   font-size: 30px;
 } */
