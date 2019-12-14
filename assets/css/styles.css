@@ -331,6 +331,7 @@ section.resume-section {
   max-width: 75rem;
 }
 
+
 section.resume-section .resume-item .resume-date {
   min-width: none;
 }
@@ -3514,10 +3515,12 @@ padding-bottom: 70px
 }
 .footer-link li{
     padding: 0 0 4px;
+    font-size: 14px!important;
 }
 .footer-link li a:hover{
     text-decoration: underline;
 }
+
 .foot-c-info{
     font-size: 14px;
     font-weight: 500;
