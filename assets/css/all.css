@@ -501,7 +501,7 @@ readers do not read off random characters that represent icons */
 .fa-beer:before {
   content: "\f0fc"; }
 
-.fa-behance:before {
+.fa-bhnce:before {
   content: "\f1b4"; }
 
 .fa-behance-square:before {
@@ -1809,7 +1809,7 @@ readers do not read off random characters that represent icons */
 .fa-git-square:before {
   content: "\f1d2"; }
 
-.fa-github:before {
+.fa-gthb:before {
   content: "\f09b"; }
 
 .fa-github-alt:before {
@@ -2241,7 +2241,7 @@ readers do not read off random characters that represent icons */
 .fa-info-circle:before {
   content: "\f05a"; }
 
-.fa-instagram:before {
+.fa-ig:before {
   content: "\f16d"; }
 
 .fa-intercom:before {
@@ -2424,7 +2424,7 @@ readers do not read off random characters that represent icons */
 .fa-linkedin:before {
   content: "\f08c"; }
 
-.fa-linkedin-in:before {
+.fa-lkdn-in:before {
   content: "\f0e1"; }
 
 .fa-linode:before {
