@@ -850,7 +850,7 @@ i-circled {
   width: auto;
   max-width:112%;
 }
-.social-icons {
+.scl-icons {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -863,7 +863,7 @@ i-circled {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-.social-link.dark-bg {
+.scl-link.dark-bg {
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .4);
     margin-bottom: 15px;
 }
@@ -896,7 +896,7 @@ i-circled {
   font-size: 35px;
   transition: all .2s ease-in-out;
 }
-.social-link {
+.scl-link {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -916,7 +916,7 @@ i-circled {
     align-items: center;
     box-shadow: inset 0 0 0 1px #ddd;
 }
-.social-link:hover .color-hover.down{
+.scl-link:hover .color-hover.down{
     height: 100%
 }
 .line-button-text {
@@ -967,7 +967,7 @@ i-circled {
     width: 100%
 }
 .button.link-button:hover .line-button-text{color: #fff}
-.hero-social-icon {
+.hero-scl-icon {
     position: relative;
     color: #fff;
     z-index: 1;
@@ -995,7 +995,7 @@ i-circled {
   color: #777;
   transition: all .3s ease-in-out;
 }
-.social-icons.home-v2-icons {
+.scl-icons.home-v2-icons {
     position: absolute;
     right: 10px;
     bottom: 70px;
@@ -1676,7 +1676,7 @@ i-circled {
 .header-v1 .hero-split-content p{
     font-size: 17px
 }
-.header-v1 .social-icons{
+.header-v1 .scl-icons{
     left: 0;
     right: auto;
 }
@@ -1727,7 +1727,7 @@ i-circled {
 .header-v3 .hero-split-content p{
     font-size: 17px
 }
-.header-v3 .social-icons{
+.header-v3 .scl-icons{
     left: 40px;
     right: auto;
 }
@@ -3502,7 +3502,7 @@ padding-bottom: 70px
     }
 }
 
-.contact .contact-social-link ul>li {
+.contact .contact-scl-link ul>li {
     padding: 0 8px
 }
 
@@ -3549,14 +3549,14 @@ padding-bottom: 70px
     font-weight: 500;
     color: rgba(255, 255, 255, 0.7)
 }
-.footer .social-icons.home-v2-icons{
+.footer .scl-icons.home-v2-icons{
     position: relative;
     bottom: auto;
     right: auto;
     left: -35px;
 }
 @media (max-width: 992px){
-    .footer .social-icons.home-v2-icons{
+    .footer .scl-icons.home-v2-icons{
         left: 0;
         -webkit-justify-content: left;
         -ms-flex-pack: left;
