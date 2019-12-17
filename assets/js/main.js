@@ -3,7 +3,7 @@
 
     var $body = $('body'),
         $header = $('.split-image'),
-        $navigation = $('.scl-icons.home-v2-icons'),
+        $navigation = $('#navigation'),
         $intro = $('.hero-split-intro'),
         $navTriggerOpen = $('.nav-trigger-open'),
         $navTriggerClose = $('.nav-trigger-close'),
@@ -27,15 +27,14 @@
     $(document).ready(function(){
 
         $(window).smartload(function(){
-
             // Desktop
             ScrollReveal().reveal("#heythere", { delay: 1000, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#terrencejames", { delay: 1100, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#diaz", { delay: 1200, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#softwareeng", { delay: 1300, distance: '150px', afterReveal: null, mobile: false });
-            ScrollReveal().reveal("#resumecv", { delay: 2000, duration: 800,  distance: '150px', origin: 'right', mobile: false });
+            ScrollReveal().reveal("#resumecv", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
             ScrollReveal().reveal($header, {delay: 2800, distance: '50px', afterReveal: null, mobile: false});
-            ScrollReveal().reveal("#navigation", { delay: 3600, distance: '50px', origin: 'left', mobile: false });
+            ScrollReveal().reveal("#navigation", { delay: 3600, duration: 800, distance: '50px', origin: 'left', mobile: false });
 
             //mobile
             ScrollReveal().reveal("#heythere", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
@@ -47,6 +46,7 @@
 
             ScrollReveal().reveal("#work-experiences", { delay: 500, distance: '50px' });
             ScrollReveal().reveal("#profile", { delay: 500, distance: '50px' });
+
 
             // Bootstrap scrollspy
             var ww = Math.max($(window).width(), window.innerWidth);
@@ -227,14 +227,6 @@
         //   //$header.fadeOut(0, "swing");
         //   $header.fadeIn(3000, "swing", navigationFadeIn);
         // }
-
-        function navigationFadeIn(){
-          $navigation.fadeIn(2000, "swing", introFadeIn);
-        }
-
-        function introFadeIn(){
-          $intro.fadeIn(2000, "swing");
-        }
 
 
         // Resume - Collapse
