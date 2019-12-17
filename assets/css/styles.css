@@ -641,6 +641,10 @@ i-circled {
     flex: 1;
 }
 
+html.sr .hero-split-content{
+  visibility: hidden;
+}
+
 .hero-split-intro{
     position: relative;
     display: -webkit-box;
@@ -836,6 +840,11 @@ i-circled {
     margin: 0 -13px 0 -40px;
 
 }
+
+html.sr .split-image.hero-1{
+  visibility: hidden;
+}
+
 .split-image.hero-2 {
     height: 100vh;
     background-image: url(../images/header-img/2.jpg);

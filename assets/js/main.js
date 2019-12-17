@@ -27,23 +27,25 @@
     $(document).ready(function(){
 
         $(window).smartload(function(){
-            ScrollReveal().reveal("#heythere", { delay: 1000, distance: '150px', afterReveal: null });
-            ScrollReveal().reveal("#terrencejames", { delay: 1100, distance: '150px', afterReveal: null });
-            ScrollReveal().reveal("#diaz", { delay: 1200, distance: '150px', afterReveal: null });
-            ScrollReveal().reveal("#softwareeng", { delay: 1300, distance: '150px', afterReveal: null });
-            ScrollReveal().reveal("#resumecv", { delay: 2000, distance: '150px', origin: 'right' });
 
-            //ScrollReveal().reveal($header, { delay: 3000 });
-            headerFadeIn();
-            navigationFadeIn();
-            function headerFadeIn(){
-              ScrollReveal().reveal($header, {delay: 2800, distance: '50px', afterReveal: null});
-            }
-            function navigationFadeIn(){
-              ScrollReveal().reveal("#navigation", { delay: 3600, distance: '50px', origin: 'left' });
-            }
-            //ScrollReveal().reveal("#navigation", { delay: 4000 });
-            //ScrollReveal().reveal(".section.no-padding-bottom", { delay: 1000 });
+            // Desktop
+            ScrollReveal().reveal("#heythere", { delay: 1000, distance: '150px', afterReveal: null, mobile: false });
+            ScrollReveal().reveal("#terrencejames", { delay: 1100, distance: '150px', afterReveal: null, mobile: false });
+            ScrollReveal().reveal("#diaz", { delay: 1200, distance: '150px', afterReveal: null, mobile: false });
+            ScrollReveal().reveal("#softwareeng", { delay: 1300, distance: '150px', afterReveal: null, mobile: false });
+            ScrollReveal().reveal("#resumecv", { delay: 2000, duration: 800,  distance: '150px', origin: 'right', mobile: false });
+            ScrollReveal().reveal($header, {delay: 2800, distance: '50px', afterReveal: null, mobile: false});
+            ScrollReveal().reveal("#navigation", { delay: 3600, distance: '50px', origin: 'left', mobile: false });
+
+            //mobile
+            ScrollReveal().reveal("#heythere", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
+            ScrollReveal().reveal("#terrencejames", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
+            ScrollReveal().reveal("#diaz", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
+            ScrollReveal().reveal("#softwareeng", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
+            ScrollReveal().reveal("#resumecv", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+            ScrollReveal().reveal($header, {delay: 500, distance: '50px', afterReveal: null, desktop: false});
+            ScrollReveal().reveal("#navigation", { delay: 500, distance: '50px', origin: 'left', desktop: false });
+
             ScrollReveal().reveal("#work-experiences", { delay: 500, distance: '50px' });
             ScrollReveal().reveal("#profile", { delay: 500, distance: '50px' });
 
@@ -179,7 +181,7 @@
          * Source: http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/
          */
 
-        var isMobile = {
+        let isMobile = {
             Android: function(){
                 return navigator.userAgent.match(/Android/i);
             },
