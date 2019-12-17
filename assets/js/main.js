@@ -1,9 +1,10 @@
 (function($){
     "use strict";
-    
+
     var $body = $('body'),
-        $header = $('.header'),
-        $navigation = $('#navigation'),
+        $header = $('.split-image'),
+        $navigation = $('.scl-icons.home-v2-icons'),
+        $intro = $('.hero-split-intro'),
         $navTriggerOpen = $('.nav-trigger-open'),
         $navTriggerClose = $('.nav-trigger-close'),
         $pageScrollLink = $('.page-scroll > a'),
@@ -18,24 +19,28 @@
         loaderVPos: '50%',
         closeBtnText: ''
     });
-    
-    
+
+    $header.hide();
+    $navigation.hide();
+    //$intro.hide();
     $(document).ready(function(){
-        
+
         $(window).smartload(function(){
-            
+
             // Bootstrap scrollspy
             var ww = Math.max($(window).width(), window.innerWidth);
-            $body.scrollspy({    
+            $body.scrollspy({
                 target: '#navigation',
                 offset: ww > 992 ? 0 : $header.height()
             });
-            
-            
+
+            headerFadeIn();
+
+
             // Page scrolling feature
             pageScroll();
-            
-            
+
+
             // Navigation - Show & hide
             $navTriggerOpen.on('click', function(){
                 $navigation.fadeIn();
@@ -44,12 +49,12 @@
             $navTriggerClose.on('click', function(){
                 $navigation.fadeOut();
             });
-            
+
             // Resume - Collapse
             resumeCollapse();
-            
-            
-            // Skills - Bar chart        
+
+
+            // Skills - Bar chart
             var $skillsBarChart = $('.skills-bar-chart'),
                 $barChartItem = $skillsBarChart.find('.chart-item');
 
@@ -58,8 +63,8 @@
                 $(this).text(percent + '%');
                 $(this).parent().css('width', percent + '%');
             });
-            
-            
+
+
             // Skills - Circle chart
             var $circleChart = $('.skills-circle-chart'),
                 grayColor = 'background-gray-dark',
@@ -68,7 +73,7 @@
                 sliceColor1 = baseColor,
                 sliceColor2 = baseColor,
                 deg1 = 90;
-            
+
             $circleChart.each(function(){
                 var $circleChartItem = $(this).find('.chart-item'),
                     $circleChartPercent = $(this).find('.chart-percent'),
@@ -107,8 +112,8 @@
                 $('<span class="display-block title-small"></span>').prependTo($circleChartPercent);
                 $circleChartPercent.children().text(circleChartPercent + '%');
             });
-            
-            
+
+
             // Project detail - Show & hide
             $projectDetail.on('hover', function(){
                 $(this).toggleClass('active');
@@ -116,25 +121,25 @@
                 $(this).toggleClass('active');
             });
         });
-        
-        
-        
+
+
+
         $(window).smartresize(function(){
-            
+
             // Bootstrap scrollspy
             var ww = Math.max($(window).width(), window.innerWidth),
                 dataScrollSpy = $body.data('bs.scrollspy'),
                 offset = ww > 992 ? 0 : $header.height();
-            
+
             dataScrollSpy.options.offset = offset;
             $body.data('bs.scrollspy', dataScrollSpy);
             $body.scrollspy('refresh');
-            
-            
+
+
             // Page scrolling feature
             pageScroll();
-            
-            
+
+
             // Navigation - Show & hide
             if (ww >= 992){
                 $navigation.show();
@@ -142,18 +147,18 @@
             else{
                 $navigation.hide();
             }
-            
-            
+
+
             // Resume - Collapse
             resumeCollapse();
         });
-        
-        
+
+
         /*
          * Detect mobile device.
          * Source: http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/
          */
-        
+
         var isMobile = {
             Android: function(){
                 return navigator.userAgent.match(/Android/i);
@@ -174,7 +179,7 @@
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
-        
+
         // Page scrolling feature
         function pageScroll(){
             $pageScrollLink.on('click', function(e){
@@ -186,16 +191,31 @@
                 $('html, body').stop().animate({
                     scrollTop: $(href).offset().top - (offset - 1)
                 }, 1000, 'easeInOutExpo');
-                
+
                 if (ww < 992){
                     $navigation.fadeOut('fast');
                 }
-                
+
                 e.preventDefault();
             });
         };
-        
-        
+
+        function headerFadeIn(){
+          console.log("hi");
+          console.log($header);
+          //$header.fadeOut(0, "swing");
+          $header.fadeIn(3000, "swing", navigationFadeIn);
+        }
+
+        function navigationFadeIn(){
+          $navigation.fadeIn(2000, "swing", introFadeIn);
+        }
+
+        function introFadeIn(){
+          $intro.fadeIn(2000, "swing");
+        }
+
+
         // Resume - Collapse
         function resumeCollapse(){
             var ww = Math.max($(window).width(), window.innerWidth);
@@ -208,12 +228,12 @@
                 $educationItem.not(':first').collapse('hide');
             }
         };
-        
-        
+
+
         if ($.fn.magnificPopup){
             var $popupTrigger = $('.popup-trigger'),
                 $popupTriggerClose = $('.popup-trigger-close');
-        
+
             $popupTrigger.on('click', function(e){
                 $.magnificPopup.open({
                     items: {
@@ -231,10 +251,10 @@
                         }
                     }
                 });
-                
+
                 e.preventDefault();
             });
-            
+
             $popupTriggerClose.on('click', function(e){
                 $.magnificPopup.close();
                 e.preventDefault();

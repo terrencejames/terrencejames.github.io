@@ -328,7 +328,16 @@ li {
   color: #BD5D38;
 }
 
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+}
 
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+/* .sticky + .content {
+  padding-top: 102px;
+} */
 
 section.resume-section {
   padding-top: 1rem !important;
@@ -642,7 +651,38 @@ i-circled {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+
+    -webkit-animation: fadein 10s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 10s; /* Firefox < 16 */
+        -ms-animation: fadein 10s; /* Internet Explorer */
+         -o-animation: fadein 10s; /* Opera < 12.1 */
+            animation: fadein 10s;
 }
+
+/* @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+} */
 .contact-block {
     position: absolute;
     left: 0px;
@@ -780,6 +820,7 @@ i-circled {
     background-size: auto, cover;
     background-repeat: repeat, no-repeat;
     margin: 0 -13px 0 -40px;
+
 }
 .split-image.hero-2 {
     height: 100vh;
