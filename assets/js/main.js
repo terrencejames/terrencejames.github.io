@@ -43,8 +43,8 @@
             ScrollReveal().reveal("#diaz", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
             ScrollReveal().reveal("#softwareeng", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
             ScrollReveal().reveal("#resumecv", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
-            ScrollReveal().reveal($header, {delay: 500, distance: '50px', afterReveal: null, desktop: false});
-            
+            ScrollReveal().reveal($header, {delay: 800, duration: 800, distance: '50px', afterReveal: null, desktop: false});
+
             ScrollReveal().reveal("#work-experiences", { delay: 500, distance: '50px' });
             ScrollReveal().reveal("#profile", { delay: 500, distance: '50px' });
 
