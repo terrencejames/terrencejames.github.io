@@ -345,6 +345,20 @@ section.resume-section {
   max-width: 75rem;
 }
 
+html.sr .resume-section{
+  visibility: hidden;
+}
+
+html.sr #header{
+  visibility:hidden;
+}
+
+html.sr #navigation{
+  visibility:hidden;
+}
+
+
+
 
 section.resume-section .resume-item .resume-date {
   min-width: none;
