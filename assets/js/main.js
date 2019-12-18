@@ -27,12 +27,30 @@
     $(document).ready(function(){
 
         $(window).smartload(function(){
+
+          pageScroll();
+
+
+          // Navigation - Show & hide
+            $navTriggerOpen.on('click', function(){
+                $navigation[0].style.visibility="visible";
+                $navigation.fadeIn();
+            });
+
+            $navTriggerClose.on('click', function(){
+                $navigation.fadeOut();
+            });
+
             // Desktop
             ScrollReveal().reveal("#heythere", { delay: 1000, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#terrencejames", { delay: 1100, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#diaz", { delay: 1200, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#softwareeng", { delay: 1300, distance: '150px', afterReveal: null, mobile: false });
             ScrollReveal().reveal("#resumecv", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
+            // ScrollReveal().reveal("#resume", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
+            // ScrollReveal().reveal("#resume2", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
+            // ScrollReveal().reveal("#cv", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
+            // ScrollReveal().reveal("#cv2", { delay: 2000, duration: 1100,  distance: '150px', origin: 'right', mobile: false });
             ScrollReveal().reveal($header, {delay: 2800, distance: '50px', afterReveal: null, mobile: false});
             ScrollReveal().reveal("#navigation", { delay: 3600, duration: 800, distance: '50px', origin: 'left', mobile: false });
 
@@ -41,7 +59,11 @@
             ScrollReveal().reveal("#terrencejames", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
             ScrollReveal().reveal("#diaz", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
             ScrollReveal().reveal("#softwareeng", { delay: 500, distance: '150px', afterReveal: null, desktop: false });
-            ScrollReveal().reveal("#resumecv", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+            ScrollReveal().reveal("#resume", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+            ScrollReveal().reveal("#resume2", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+            ScrollReveal().reveal("#cv", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+            ScrollReveal().reveal("#cv2", { delay: 500, duration: 800,  distance: '150px', origin: 'right', desktop: false });
+
             ScrollReveal().reveal($header, {delay: 800, duration: 800, distance: '50px', afterReveal: null, desktop: false});
 
             ScrollReveal().reveal("#work-experiences", { delay: 500, distance: '50px' });
@@ -59,17 +81,7 @@
 
 
             // Page scrolling feature
-            pageScroll();
 
-
-            // Navigation - Show & hide
-            $navTriggerOpen.on('click', function(){
-                $navigation.fadeIn();
-            });
-
-            $navTriggerClose.on('click', function(){
-                $navigation.fadeOut();
-            });
 
             // Resume - Collapse
             resumeCollapse();
@@ -220,13 +232,6 @@
                 e.preventDefault();
             });
         };
-
-        // function headerFadeIn(){
-        //   console.log("hi");
-        //   console.log($header);
-        //   //$header.fadeOut(0, "swing");
-        //   $header.fadeIn(3000, "swing", navigationFadeIn);
-        // }
 
 
         // Resume - Collapse
