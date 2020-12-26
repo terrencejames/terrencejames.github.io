@@ -186,7 +186,10 @@ survey
     .add(function (result) {
         document
             .querySelector('#surveyResult')
-            .textContent = "WHY TF DID YOU PUT THESE ANSWERS:\n" + JSON.stringify(result.data, null, 3);
+            .textContent = "WHY TF DID YOU PUT THESE ANSWERS:\n" + JSON.stringify(result.data, null, 3) +
+            "\n \n \n <br> DO NOT SCREENSHOTS ANSWERS: \n 1. DESSERTS \n 2. COOKIES\n" +
+            "3.SOFTWARE ENGINEER III \n 4. MOBILE DEVELOPMENT \n 5.JAMES REID \n" +
+            "6. PERSONA 5 \n 7. 500-600 \n 8. VISUAL NOVEL \n 9. ELIJAH CANLAS \n 10. LIZA SOBERANO";
     });
 
 $("#surveyElement").Survey({model: survey});
