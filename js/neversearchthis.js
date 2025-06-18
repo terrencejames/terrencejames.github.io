@@ -111,11 +111,16 @@ let container = document.getElementById("pkmnContainer");
 const MAX_BST = 780;
 const MAX_STAT = 255;
 
-function createPkmnCell(name, stat) {
+function createPkmnCell(name, stat = -1) {
     let clone = templateContent.cloneNode(true);
     let cloneImgs = clone.querySelectorAll("img");
     for (const imgElement of cloneImgs) {
         imgElement.src = pokemonValuesWithStats[name]['imgSrc'];
+    }
+    if (stat == -1) { 
+        var col = clone.querySelector("div");
+        col.className = "col-1";
+        return clone;
     }
     if (stat == statsMap["bst"]){
         var statNum = pokemonValuesWithStats[name][stat].base_stat;
@@ -187,9 +192,38 @@ function createStatsCol(statName) {
     return pkmnRow;
 }
 function createPokemonList() {
-    let numCols = 1;
-    let numRows = 3;
-    
+    const numCols = 5;
+    const numRows = 3;
+
+    var container = document.getElementById("pkmnList");
+    container.classList.add("mb-5");
+    container.classList.add("mt-5");
+
+    const header = document.createElement("h1");
+    header.innerText = "Pokemon List";
+    header.className =" text-center";
+    container.appendChild(header);
+
+    var pokemonList = [...pokemonValues];
+    while (pokemonList.length != 0) {
+        var pkmnCell = createPkmnCell(pokemonList.pop());
+
+        container.appendChild(pkmnCell);
+    }
+    // for (i = 0; i < numRows; i++) {
+    //     let pkmnRow = createPkmnRow();
+    //     container.appendChild(pkmnRow);
+
+    //     for (let j = 0; j< numCols; j++) {
+    //         if (pokemonList.length != 0){
+    //             var pkmnCell = createPkmnCell(pokemonList.pop());
+
+    //             pkmnRow.appendChild(pkmnCell);
+    //         }
+    //     }
+    // }
+
+    // Create the stats columns
     for (const stat of Object.keys(statsMap)){
         createStatsCol(stat);
     }
