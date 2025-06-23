@@ -64,8 +64,8 @@ let pokemonValues = [];
 var pokemonValuesWithStats = {};
 document.querySelector("#pkmnForm").addEventListener("submit", async function(e){
         e.preventDefault(); 
-        let textAreaValue = e.target.elements[0].value;
-        pokemonValues = textAreaValue.split("\n");
+        let textAreaValue = e.target.elements[0].value.trim();
+        pokemonValues = textAreaValue.split("\n").map(item => item.replace(' ', '-').toLowerCase());
         await Promise.all(pokemonValues.map(async pokemon => {
             var pkmnData = await getPokemonData(pokemon);
 
